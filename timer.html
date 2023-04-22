@@ -296,7 +296,7 @@
         // set the absolute time of the next stop
         document.getElementById(`next-stop-time-${id}`).innerHTML = document.getElementById(`next-stop-job-flattimepicker-${id}`).value;
 
-        var input_str = `<input class="table-input-${id}" type="text">`;
+        var input_str = `<input class="table-input table-input-${id}" type="text">`;
 
         tbody.innerHTML = "";
         for (var i  = 0 ; i < cells.length ; i++) {

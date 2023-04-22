@@ -67,14 +67,14 @@
             <div class="col-md-6">
                 <div class="container-fluid border rounded-3">
                     <h3 class="text-center">Car 9: Next stop around :</h3>
-                    <h2 class="text-center"><span id="next-stop-time">-</span></h2>
-                    <table class="table" id="next-stop-summary-table">
+                    <h2 class="text-center"><span id="next-stop-time-9">-</span></h2>
+                    <table class="table" id="next-stop-summary-table-9">
                         <thead>
                         <tr>
                             <th scope="col">To do</th>
                         </tr>
                         </thead>
-                        <tbody id="next-stop-summary-table-body">
+                        <tbody id="next-stop-summary-table-body-9">
                         </tbody>
                     </table>
                 </div>
@@ -82,14 +82,14 @@
             <div class="col-md-6">
                 <div class="container-fluid border rounded-3">
                     <h3 class="text-center">Car 10: Next stop around :</h3>
-                    <h2 class="text-center"><span id="next-stop-time">-</span></h2>
-                    <table class="table" id="next-stop-summary-table">
+                    <h2 class="text-center"><span id="next-stop-time-10">-</span></h2>
+                    <table class="table" id="next-stop-summary-table-10">
                         <thead>
                         <tr>
                             <th scope="col">To do</th>
                         </tr>
                         </thead>
-                        <tbody id="next-stop-summary-table-body">
+                        <tbody id="next-stop-summary-table-body-10">
                         </tbody>
                     </table>
                 </div>
@@ -134,13 +134,13 @@
     </div>
 </div>
 
-<div id="tables-container" class="container" style="height: 100vh">
+<div id="tables-container" class="container" style="height: 100vh;margin-top: 25px">
     <div class="row">
         <div class="col-md-6 border">
             <h3 class="text-center">CAR 9</h3>
             <div style="margin: 10px">
-                <label for="next-stop-job-flattimepicker">Select time :</label>
-                <input type="text" id="next-stop-job-flattimepicker" placeholder="Select time.." class="flattimepickerinput" style="width: 50%" data-input hidden>
+                <label for="next-stop-job-flattimepicker-9">Select time :</label>
+                <input type="text" id="next-stop-job-flattimepicker-9" placeholder="Select time.." class="flattimepickerinput" style="width: 50%" data-input hidden>
 
             </div>
 
@@ -149,7 +149,7 @@
                 <tr>
                     <th scope="col" data-name="completed" style="text-align:center"> <span style="text-align: center">Completed</span></th>
                     <th scope="col" data-name="next-stop-job">Next stop job</th>
-                    <th scope="col" data-name="next-stop-job"><button class="btn btn-sm btn-success" onclick="loadSubtasks()"><i class="bi bi-check"></i></button></th>
+                    <th scope="col" data-name="next-stop-job"><button class="btn btn-sm btn-success" onclick="loadSubtasks('9')"><i class="bi bi-check"></i></button></th>
                     <th scope="col" data-name="next-stop-job"><button class="btn btn-sm btn-danger" onclick="clearSubtasks()"><i class="bi bi-trash"></i></button></th>
                 </tr>
                 </thead>
@@ -194,8 +194,8 @@
         <div class="col-md-6 border">
             <h3 class="text-center">CAR 10</h3>
             <div style="margin: 10px">
-                <label for="next-stop-job-flattimepicker">Select time :</label>
-                <input type="text" id="next-stop-job-flattimepicker" placeholder="Select time.." class="flattimepickerinput" style="width: 50%" data-input hidden>
+                <label for="next-stop-job-flattimepicker-10">Select time :</label>
+                <input type="text" id="next-stop-job-flattimepicker-10" placeholder="Select time.." class="flattimepickerinput" style="width: 50%" data-input hidden>
 
             </div>
 
@@ -204,7 +204,7 @@
                 <tr>
                     <th scope="col" data-name="completed" style="text-align:center"> <span style="text-align: center">Completed</span></th>
                     <th scope="col" data-name="next-stop-job">Next stop job</th>
-                    <th scope="col" data-name="next-stop-job"><button class="btn btn-sm btn-success" onclick="loadSubtasks()"><i class="bi bi-check"></i></button></th>
+                    <th scope="col" data-name="next-stop-job"><button class="btn btn-sm btn-success" onclick="loadSubtasks('10')"><i class="bi bi-check"></i></button></th>
                     <th scope="col" data-name="next-stop-job"><button class="btn btn-sm btn-danger" onclick="clearSubtasks()"><i class="bi bi-trash"></i></button></th>
                 </tr>
                 </thead>
@@ -280,7 +280,7 @@
         // },
     ];
 
-    function loadSubtasks() {
+    function loadSubtasks(id = '9') {
 
         var checkboxes = document.getElementsByClassName("table-checkbox");
         var inputs = document.getElementsByClassName("table-input");
@@ -288,11 +288,11 @@
 
         const subTasksTable = document.getElementById("subtasks-table");
         const subTasksTableBody = document.getElementById("subtasks-table-body");
-        const table = document.getElementById("next-stop-summary-table");
-        const tbody = document.getElementById("next-stop-summary-table-body");
+        const table = document.getElementById(`next-stop-summary-table-${id}`);
+        const tbody = document.getElementById(`next-stop-summary-table-body-${id}`);
 
         // set the absolute time of the next stop
-        document.getElementById("next-stop-time").innerHTML = document.getElementById("next-stop-job-flattimepicker").value;
+        document.getElementById(`next-stop-time-${id}`).innerHTML = document.getElementById(`next-stop-job-flattimepicker-${id}`).value;
 
         var input_str = '<input class="table-input" type="text">';
 
@@ -581,7 +581,19 @@
     }
 
     // Otherwise, selectors are also supported
-    const nextStopJobfp = flatpickr("#next-stop-job-flattimepicker", {
+    const nextStopJobfp9 = flatpickr("#next-stop-job-flattimepicker-9", {
+        altInput: true,
+        noCalendar: true,
+        enableTime: true,
+        time_24hr: true,
+        enableSeconds  : true,
+        inline: true,  // set to true to have the calendar inline
+        minuteIncrement: 1,
+        altFormat: "H:i:S",
+        dateFormat: "H:i:S",
+        defaultDate: "18:00:00",
+    });
+    const nextStopJobfp10 = flatpickr("#next-stop-job-flattimepicker-10", {
         altInput: true,
         noCalendar: true,
         enableTime: true,

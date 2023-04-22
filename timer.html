@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
-    <title>Boutsen Ginion countdown</title>
+    <title>Boutsen VDS countdown</title>
 </head>
 <body>
 <!--<h1>Countdown</h1>-->
@@ -25,27 +25,46 @@
     <!--        <img style="text-align: center" src="images/boutsen.jpg" width="50%"     alt="">-->
     <!--    </div>-->
     <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
             <div class="text-left display-1 font-weight-bold"> <strong id="current-time">00:00:00</strong> </div>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
             <img src="images/boutsen.jpg" width="200" height="100" alt="">
         </div>
     </div>
 
 
     <div id="timer-container" class="container border rounded-3">
-            <div class="text-center display-1 font-weight-bold"> <strong id="event-to-expire">-</strong> </div>
-            <div class="text-center display-7 font-weight-bold"> Expires in </div>
-            <div class="text-center display-1 font-weight-bold" style="font-size: 6rem"> <strong id="timer">00:00:00</strong> </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="text-center display-1 font-weight-bold"> <strong id="event-to-expire">-</strong> </div>
+                <div class="text-center display-7 font-weight-bold"> Expires in </div>
+                <div class="text-center display-1 font-weight-bold" style="font-size: 6rem"> <strong id="timer">00:00:00</strong> </div>
+            </div>
+            <div class="col-md-6">
+                <div class="container-fluid border rounded-3">
+                    <h3 class="text-center">Planning of the day:</h3>
+                    <table class="table" id="planning-of-the-day-summary-table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Event</th>
+                        </tr>
+                        </thead>
+                        <tbody id="planning-of-the-day-summary-table-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="summaries-container" class="container" style="margin-top: 25px">
         <div class="row">
             <div class="col-md-6">
                 <div class="container-fluid border rounded-3">
-                    <h3 class="text-center">Next stop around :</h3>
+                    <h3 class="text-center">Car 9: Next stop around :</h3>
                     <h2 class="text-center"><span id="next-stop-time">-</span></h2>
                     <table class="table" id="next-stop-summary-table">
                         <thead>
@@ -60,15 +79,15 @@
             </div>
             <div class="col-md-6">
                 <div class="container-fluid border rounded-3">
-                    <h3 class="text-center">Planning of the day:</h3>
-                    <table class="table" id="planning-of-the-day-summary-table">
+                    <h3 class="text-center">Car 10: Next stop around :</h3>
+                    <h2 class="text-center"><span id="next-stop-time">-</span></h2>
+                    <table class="table" id="next-stop-summary-table">
                         <thead>
                         <tr>
-                            <th scope="col">Time</th>
-                            <th scope="col">Event</th>
+                            <th scope="col">To do</th>
                         </tr>
                         </thead>
-                        <tbody id="planning-of-the-day-summary-table-body">
+                        <tbody id="next-stop-summary-table-body">
                         </tbody>
                     </table>
                 </div>

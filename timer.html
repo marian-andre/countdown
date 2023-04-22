@@ -100,8 +100,8 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 border">
             <h3 class="text-center">Configure planning of the day :</h3>
             <div style="margin: 10px">
                 <!--    <input type="time" id="timepicker" name="timepicker"-->
@@ -130,13 +130,69 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-md-3"></div>
+        <div class="col-md-2"></div>
     </div>
 </div>
 
 <div id="tables-container" class="container" style="height: 100vh">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 border">
+            <h3 class="text-center">CAR 9</h3>
+            <div style="margin: 10px">
+                <label for="next-stop-job-flattimepicker">Select time :</label>
+                <input type="text" id="next-stop-job-flattimepicker" placeholder="Select time.." class="flattimepickerinput" style="width: 50%" data-input hidden>
+
+            </div>
+
+            <table class="table" id="subtasks-table">
+                <thead>
+                <tr>
+                    <th scope="col" data-name="completed" style="text-align:center"> <span style="text-align: center">Completed</span></th>
+                    <th scope="col" data-name="next-stop-job">Next stop job</th>
+                    <th scope="col" data-name="next-stop-job"><button class="btn btn-sm btn-success" onclick="loadSubtasks()"><i class="bi bi-check"></i></button></th>
+                    <th scope="col" data-name="next-stop-job"><button class="btn btn-sm btn-danger" onclick="clearSubtasks()"><i class="bi bi-trash"></i></button></th>
+                </tr>
+                </thead>
+                <tbody id="subtasks-table-body">
+                <tr>
+                </tr>
+                <tr>
+                    <td style="text-align:center"> <input class="table-checkbox"    type="checkbox"></td>
+                    <td class="table-cell"> Tires change set: <input class="table-input" type="text"></td>
+                </tr>
+                <tr>
+                    <td style="text-align:center"> <input class="table-checkbox" type="checkbox"></td>
+                    <td class="table-cell"> Fuel in: <input class="table-input" type="text"> kg</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center"> <input class="table-checkbox" type="checkbox"></td>
+                    <td class="table-cell"> Driver change: <input class="table-input" type="text"></td>
+                </tr>
+                <tr>
+                    <td style="text-align:center"> <input class="table-checkbox" type="checkbox"></td>
+                    <td class="table-cell"> Check pressure </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center"> <input class="table-checkbox" type="checkbox"></td>
+                    <td class="table-cell"> Check tires temp </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center"> <input class="table-checkbox" type="checkbox"></td>
+                    <td class="table-cell"> Check brake temp </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center"> <input class="table-checkbox" type="checkbox"></td>
+                    <td class="table-cell"> Blanking <input class="table-input" type="text"></td>
+                </tr>
+                <tr>
+                    <td style="text-align:center"> <input class="table-checkbox" type="checkbox"></td>
+                    <td class="table-cell"> Setup change: <input class="table-input" type="text"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6 border">
+            <h3 class="text-center">CAR 10</h3>
             <div style="margin: 10px">
                 <label for="next-stop-job-flattimepicker">Select time :</label>
                 <input type="text" id="next-stop-job-flattimepicker" placeholder="Select time.." class="flattimepickerinput" style="width: 50%" data-input hidden>
